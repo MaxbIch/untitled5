@@ -1,3 +1,5 @@
+import ContactUs from "./ContactUs.jsx";
+
 function Main() {
     return (
         <div className="main">
@@ -14,6 +16,7 @@ function Main() {
                     </div>
                 </div>
             </div>
+			<ContactUs tittle={"ГЛАВНАЯ"} />
         </div>
     )
 }

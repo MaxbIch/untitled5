@@ -6,11 +6,20 @@
   font-weight: normal;
   font-style: normal;
 }
+html {
+  scroll-behavior: smooth;
+}
 body.lock {
   overflow: hidden !important;
 }
+a:hover {
+	color: red !important;
+}
+span:hover {
+	cursor: pointer !important;
+}
 .fake {
-	opacity: 0;
+	opacity: 0 !important;
 }
 .header-slider {
   text-align: center;
@@ -19,10 +28,11 @@ body.lock {
   font-weight: bold;
   padding: 20px 0;
 }
+
 .header-slider h2 {
   margin: 0;
 }
-.delivery-steps1 {
+.delivery-steps1,.delivery-steps2 {
     margin-left: 150px !important;
 }
 .delivery-steps3 {
@@ -35,14 +45,6 @@ body.lock {
     position: absolute;
     right: 25px;
 }
-/*.header-burger.active {*/
-/*    position: absolute;*/
-/*    left: 35%;*/
-/*		top: 90px;*/
-/*}*/
-/*.navbar.active {*/
-/*	padding: 10px 0 !important;*/
-/*}*/
 .header-burger {
 	display: block;
 	position: relative;
@@ -173,17 +175,12 @@ header {
   width: 100vw;
   height: 100vh;
   font-weight: 300;
-  z-index: 2;
+  z-index: 1000;
   position: relative;
 }
 .openMenu {
   display: none;
 }
-
-
-
-
-
 .headerLogo {
   width: 200px;
   height: 90px;
@@ -215,10 +212,11 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 10px 25px;
+  padding: 30px 25px;
   width: 100%;
+	z-index: 999;
   justify-content: space-between;
-  background-color: #191c23;
+  background-color: #13181e;
 }
 .menuIcon {
   width: 17px;
@@ -251,11 +249,14 @@ header {
 	display: none;
   border: 3px solid red;
   border-radius: 60px ;
-  padding: 10px 25px;
+  padding: 0 25px;
   font-size: 18px;
   margin-right: 50px;
   font-family: Montserrat;
   text-align: center;
+}
+.number {
+	padding: 10px 15px;
 }
 .navbar-right:hover .navbar-contact-us {
 	display: block;
@@ -279,7 +280,6 @@ header {
   max-width: 1312px;
   margin: 150px auto 15px;
   font-size: 50px;
-	z-index: 3;
 	position: relative;
   font-weight: 300;
 }
@@ -293,7 +293,7 @@ header {
 .main-content-4 {
   border: 1px solid #676F83;
   position: relative;
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   font-weight: 400;
   padding: 100px 30px 30px 200px;
@@ -305,7 +305,7 @@ header {
   position: absolute;
   left: 50px;
   top: 75px;
-  height: 60px;
+  height: 70px;
 }
 
 
@@ -377,14 +377,14 @@ header {
   margin-bottom: 25px;
 }
 .include {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   color: #FFFFFF;
   padding: 5px 0;
 }
 
 .no-include {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
 	z-index: 0;
 	position: relative;
@@ -392,6 +392,54 @@ header {
   opacity: 0.6;
   padding: 5px 0;
 }
+.tariffs-price-all {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Плавные анимации */
+.tariffs-price,
+.tariffs-price-contact {
+	transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+/* Исходное состояние */
+.tariffs-price {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* По умолчанию скрываем кнопку */
+.tariffs-price-contact {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	text-align: center;
+	align-items: center;
+	font-size: 48px;
+	font-weight: 300;
+	padding: 20px;
+	border: 1px solid red;
+	border-radius: 60px;
+	cursor: pointer;
+}
+.tariffs-price-contact a {
+	color: #fff !important;
+}
+
+/* При наведении скрываем цену и показываем кнопку */
+.tariffs-price-all:hover .tariffs-price {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.tariffs-price-all:hover .tariffs-price-contact {
+	opacity: 1;
+	visibility: visible;
+}
+
 
 /*Форма*/
 .form_tittle {
@@ -472,7 +520,17 @@ input::placeholder {
   font-size: 24px;
   padding: 25px;
   margin: auto 50px;
-
+	cursor: pointer;
+}
+.zak_pod:hover {
+	border: 1px solid red;
+	color: red;
+}
+span.error {
+    font-size: 14px;
+    color: red;
+    line-height: 16px;
+    margin-top: -12px;
 }
 .zak_pod img {
   width: 80px;
@@ -502,9 +560,11 @@ footer h4 {
 }
 .footer-left {
   flex: 1;
+
 }
 .footer-left div{
   margin: 10px 0;
+	font-family: Montserrat;
 }
 .footer-right {
   flex: 1;
@@ -521,127 +581,13 @@ footer h4 {
 
 
 
-/* Общий контейнер слайдера */
-.slider-container {
-  max-width: 100%;
-	width: 1312px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Стили для каждого слайда */
-.slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 400px;
-  background: linear-gradient(135deg, #1c1c1c, #444);
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide:hover {
-  transform: scale(1.02);
-}
-
-/* Изображение внутри слайда */
-.slide-image {
-  max-width: 250px;
-  height: auto;
-  display: block;
-  margin-bottom: 15px;
-}
-
-/* Заголовок слайда */
-.slide-title {
-  font-size: 26px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-/* Кастомные точки (пагинация) */
-.slick-dots {
-  bottom: -30px;
-}
-
-.slick-dots li button:before {
-  font-size: 12px;
-  color: #fff;
-  opacity: 0.5;
-  transition: all 0.3s;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #e00;
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* Кастомные стрелки */
-.slick-prev,
-.slick-next {
-  width: 40px;
-  height: 40px;
-  z-index: 10;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  font-size: 30px;
-  color: #fff;
-  opacity: 0.8;
-  transition: all 0.3s;
-}
-
-.slick-prev:hover:before,
-.slick-next:hover:before {
-  color: #e00;
-  opacity: 1;
-}
-
-/* Адаптация под мобильные устройства */
-@media (max-width: 768px) {
-  .slide {
-    height: 300px;
-    padding: 15px;
-  }
-
-  .slide-title {
-    font-size: 20px;
-  }
-
-  .slide-image {
-    max-width: 180px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*Доставка*/
 .delivery-container {
   background-image: url("./img/delivery-back.svg");
   background-size: cover;
-  background-position: center;
+  background-position: -20px center;
+	background-color: #cad7f2;
   background-repeat: no-repeat;
   width: 100vw;
   font-weight: 300;
@@ -667,7 +613,7 @@ footer h4 {
 	color: rgba(25, 28, 35, 0.6);
 }
 .delivery-steps {
-  max-width: 450px;
+  max-width: 440px;
   color: #191C23;
   margin: 10% auto;
   font-size: 20px;
@@ -714,3 +660,143 @@ footer h4 {
   transform: translateY(-3px);
 }
 
+.contactUs-container {
+	max-width: 1312px;
+	width: 100%;
+	margin: 100px auto 50px;
+	justify-content: space-between;
+	display: flex;
+	padding-bottom: 50px;
+}
+.contactUs {
+	display: flex;
+	margin: auto;
+	border: unset !important;
+	width: fit-content;
+	padding-left: 25px;
+}
+.point {
+	width: 15px;
+	align-items: center;
+	height: 15px;
+	background-color: red;
+	border-radius: 25px;
+	margin: auto 25px auto 0;
+}
+.line {
+	width: 100%;
+	max-width: 800px;
+	height: 1px;
+	background-color: #fff;
+	margin: auto 25px;
+	border: unset !important;
+}
+.contactUs-info {
+	padding: 20px 30px;
+	border: 1px solid #fff;
+	border-radius: 55px;
+	max-width: 250px;
+	width: 100%;
+	text-align: center;
+}
+.type-white {
+	color: #fff;
+}
+.line.type-black {
+	width: 80%;
+	max-width: 600px;
+}
+.type-black {
+	color: #000;
+	border: 1px solid #000;
+}
+.line.type-black {
+	background-color: #000;
+}
+
+
+
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  min-width: 300px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Появление баннера */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Стили для текста */
+.cookie-banner div {
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Ссылки в баннере */
+.cookie-link {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.cookie-link:hover {
+  color: #ffcc00;
+}
+
+/* Кнопка "Принять" */
+.cookie-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cookie-btn:hover {
+  background-color: #e68900;
+}
+
+.cookie-btn:focus {
+  outline: none;
+}
+
+
+/* Уведомление об успешной отправке формы */
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out, fadeOut 0.5s 2.5s ease-out;
+}

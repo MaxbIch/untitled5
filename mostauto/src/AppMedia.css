@@ -26,9 +26,19 @@
 	.tariffs-container-tittle {
     text-align: center;
 	}
+	.delivery-right {
+		padding-right: 25px;
+		padding-left: 30px;
+		display: flex;
+		flex-direction: column-reverse;
+	}
 	.main h1 {
     margin: 50px auto 15px;
     text-align: center;
+}
+	.delivery-steps {
+		margin: unset;
+		width: 100%;
 }
 
 	.delivery-container {
@@ -53,10 +63,38 @@
 		margin-bottom: 50px;
 		width: 70%;
 	}
+	.delivery-steps1,.delivery-steps2 {
+    margin-left: unset!important;
+}
+	.delivery-steps3 {
+    margin-right: unset !important;
+	}
+	.contactUs {
+		padding-left: 25px;
+	}
+	.contactUs-info {
+		margin-right: 25px;
+	}
+	.delivery-left {
+    padding-left: 25px;
+	}
+	.delivery-right {
+    padding-right: 25px;
+}
 }
 @media screen and (max-width: 1024px) {
 	.header-menu {
-	width: 60%;
+		width: 60%;
+	}
+	.delivery-steps div {
+    font-size: 75px;
+	}
+	.line.type-black {
+    width: 80%;
+    max-width: 300px;
+	}
+	.contactUs-info, .contactUs {
+		font-size: 22px;
 	}
 }
 
@@ -77,7 +115,12 @@
 	.footerLogo {
 		display: none;
 	}
-
+	.contactUs-info, .contactUs {
+		font-size: 18px;
+	}
+	.contactUs-info {
+		padding: 10px;
+	}
 }
 
 
@@ -117,10 +160,82 @@
     padding-bottom: 15px;
 	}
 	.form-description-tittle {
-    font-size: 24px;
-    line-height: 32px;
-    text-align: center;
+		font-size: 24px;
+		line-height: 32px;
+		text-align: center;
 		margin: unset;
+		padding: 0 25px;
+	}
+	footer h4 {
+		display: none;
+	}
+	.zak_pod {
+		margin-top: 10px;
+		padding: 10px;
+	}
+	.footer-left br {
+		display: none;
+	}
+	.footer-left div{
+		margin: 0;
+	}
+	.footer-right {
+		font-size: 15px;
+		line-height: 18px;
+	}
+	.footer-left {
+		margin-top: 50px;
+		font-size: 15px;
+	}
+	.input-group input {
+    margin: 10px 0;
+}
+	.contactUs-info, .contactUs {
+		font-size: 14px;
+		width: 100%;
+	}
+	.contactUs-container {
+		margin: 0 auto;
+	}
+	.line.type-black {
+		display: none;
+	}
+	.navbar-tittle {
+    font-size: 14px;
+	}
+	.logo-navbar {
+    width: 70px;
+    height: auto;
+    margin: auto 40px auto 10px;
+	}
+	.navbar-tittle img {
+    width: 30px;
+    margin: auto 35px auto 10px;
+	}
+	.header-burger {
+    width: 20px;
+}
+	.navbar-left {
+    display: flex;
+    margin: auto 0;
+    font-size: 14px;
+	}
+	.line {
+    margin: auto 10px;
 }
 
+}
+@media screen and (max-width: 450px) {
+	.contactUs-info, .contactUs {
+			font-size: 10px;
+	}
+	.point {
+    margin: auto 5px auto 0;
+	}
+	.tariffs-1 h3, .tariffs-2 h3, .tariffs-3 h3 {
+    font-size: 28px;
+	}
+	.fake {
+		display: none;
+	}
 }
