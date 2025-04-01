@@ -96,6 +96,9 @@
 	.contactUs-info, .contactUs {
 		font-size: 22px;
 	}
+	.line.type-black {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -120,6 +123,17 @@
 	}
 	.contactUs-info {
 		padding: 10px;
+	}
+	.delivery-left {
+		padding: 0 5px;
+	}
+	.delivery-steps {
+		margin: 0;
+		width: 90%;
+		height: auto;
+	}
+	.delivery-right {
+		padding: 0 5px;
 	}
 }
 
@@ -192,7 +206,6 @@
 }
 	.contactUs-info, .contactUs {
 		font-size: 14px;
-		width: 100%;
 	}
 	.contactUs-container {
 		margin: 0 auto;

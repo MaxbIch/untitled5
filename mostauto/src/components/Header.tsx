@@ -1,8 +1,8 @@
 import {useState} from "react";
 import headerlogo from "../img/headerLogo.png"
 import kia from "../img/header-back.png"
-import ford from "../img/ford.png"
-import audi from "../img/audi.png"
+import ford from "../img/ford.jpeg"
+import audi from "../img/audi.jpeg"
 import {TextForMainPage} from "./TextForMainPageI.js";
 
 
